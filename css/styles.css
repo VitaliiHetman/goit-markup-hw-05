@@ -97,6 +97,14 @@ button {
   align-items: center;
 }
 
+/* position: absolute;
+width: 48px;
+height: 4px;
+left: 0px;
+top: 44px;
+background: #404BBF;
+border-radius: 2px; */
+
 .menu-item:not(:last-child) {
   margin-right: 40px;
 }
@@ -131,7 +139,7 @@ button {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--navy-blue);
-  /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .menu-link:active,
@@ -197,6 +205,7 @@ button {
   letter-spacing: 0.04em;
   color: var(--white-background);
   background-color: var(--primary-brand);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover,
@@ -307,6 +316,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-soc-link:hover,
@@ -335,6 +345,7 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover,
@@ -360,6 +371,7 @@ button {
   width: 168px;
   height: 88px;
   fill: var(--subtle-text);
+  transition: background-color fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .company-list-link:hover,
@@ -413,13 +425,7 @@ button {
   margin-bottom: 72px;
 }
 
-.button-portfolio:hover,
-.button-portfolio:focus {
-  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
-    0px 2px 1px rgba(0, 0, 0, 0.08),
-    0px 2px 2px rgba(0, 0, 0, 0.12);
-  border-color: var(--pressed-state);
-}
+
 
 .cont-portfolio {
   padding-top: 96px;
@@ -435,9 +441,31 @@ button {
 }
 
 .team-card-port {
+  Width: 360px;
   display: flex;
   flex-wrap: wrap;
   gap: 48px 24px;
+ 
+  
+}
+
+.cover-text{
+  position: relative;
+}
+
+.cover-text{
+  position: absolute;
+  top: 0;
+/* font-family: 'Roboto';
+font-style: normal; */
+font-weight: 400;
+/* font-size: 16px;
+line-height: 24px;
+letter-spacing: 0.02em; */
+color:var(--light);
+background-color: var(--primary-brand);
+padding: 40px;
+height: 100%;
 }
 
 .card-port {
@@ -458,7 +486,25 @@ button {
   background-color: var(--light);
   cursor: pointer;
   border: 1px solid #e7e9fc;
+  transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.button-portfolio:hover,
+.button-portfolio:focus {
+  color: var(--white-background);
+  background-color: var(--pressed-state);
+}
+
+.button-portfolio:hover,
+.button-portfolio:focus {
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1),
+    0px 2px 1px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
+  border-color: var(--pressed-state);
+}
+
+
+
 .title-port {
   font-weight: 500;
   font-size: 20px;
@@ -483,3 +529,5 @@ button {
     0px 1px 1px rgba(46, 47, 66, 0.16),
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
+
+/* 14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App */
