@@ -35,6 +35,8 @@ ul {
 
 img {
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .list {
@@ -156,6 +158,20 @@ border-radius: 2px; */
   letter-spacing: 0.02em;
   color: var(--text);
   margin-left: auto;
+}
+.current{
+  position: relative;
+}
+
+.current:after{
+content: '';
+position: absolute;
+left: 0;
+bottom: -20px;
+width: 100%;
+height: 4px;
+border-radius: 2px;
+background: var(--pressed-state);
 }
 
 /* ================================Hero============================ */
@@ -371,7 +387,8 @@ border-radius: 2px; */
   width: 168px;
   height: 88px;
   fill: var(--subtle-text);
-  transition: background-color fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color fill 250ms
+    cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .company-list-link:hover,
@@ -425,8 +442,6 @@ border-radius: 2px; */
   margin-bottom: 72px;
 }
 
-
-
 .cont-portfolio {
   padding-top: 96px;
   padding-bottom: 120px;
@@ -441,33 +456,44 @@ border-radius: 2px; */
 }
 
 .team-card-port {
-  Width: 360px;
   display: flex;
   flex-wrap: wrap;
   gap: 48px 24px;
- 
-  
+}
+.menu-link-port{
+  display: block;
 }
 
 .cover-text{
   position: relative;
+  overflow: hidden;
 }
 
-.cover-text{
-  position: absolute;
+/* .cover-text{
   top: 0;
-/* font-family: 'Roboto';
-font-style: normal; */
-font-weight: 400;
-/* font-size: 16px;
-line-height: 24px;
-letter-spacing: 0.02em; */
 color:var(--light);
 background-color: var(--primary-brand);
 padding: 40px;
-height: 100%;
-}
+height: 100%; */
+/* } */
 
+.overlay{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  padding: 40px 32px;
+  color: var(--light);
+  background-color: var(--primary-brand);
+  transform: translate(0, 100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.card-port-shedow:hover .overlay,
+.card-port-shedow:focus .overlay{
+  transform: translate(0,0);
+}
 .card-port {
   padding: 32px 16px;
   border: 1px solid var(--text-footer);
@@ -486,7 +512,8 @@ height: 100%;
   background-color: var(--light);
   cursor: pointer;
   border: 1px solid #e7e9fc;
-  transition:  background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-portfolio:hover,
@@ -502,8 +529,6 @@ height: 100%;
     0px 2px 2px rgba(0, 0, 0, 0.12);
   border-color: var(--pressed-state);
 }
-
-
 
 .title-port {
   font-weight: 500;
@@ -521,6 +546,8 @@ height: 100%;
 }
 .card-port-shedow {
   display: block;
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  
 }
 
 .card-port-shedow:hover,
@@ -530,4 +557,48 @@ height: 100%;
     0px 2px 1px rgba(46, 47, 66, 0.08);
 }
 
-/* 14 Stylish and User-Friendly App Design Concepts · Task Manager App · Calorie Tracker App · Exotic Fruit Ecommerce App · Cloud Storage App */
+.backdrop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(46, 47, 66, 0.4);
+  transition: opacity 350ms linear, visibility 350ms linear;
+}
+.modal {
+  width: 408px;
+  min-height: 576px;
+  background-color: #fcfcfc;
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(1) rotate(0deg);
+  transition: transform 350ms linear;
+  padding: 32px;
+}
+.backdrop .is-hidden .modal{
+  transform: translate(-50%, -50%) scaleY(0) rotate(-75deg);
+}
+
+.modal-close-btn{
+width: 24px;
+height: 24px;
+border: 1px solid rgba(0, 0, 0, 0.1);
+background-color: var(--text-footer);
+border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+display: block;
+margin-left: auto;
+}
+
+.is-hidden{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
