@@ -159,19 +159,19 @@ border-radius: 2px; */
   color: var(--text);
   margin-left: auto;
 }
-.current{
+.current {
   position: relative;
 }
 
-.current:after{
-content: '';
-position: absolute;
-left: 0;
-bottom: -20px;
-width: 100%;
-height: 4px;
-border-radius: 2px;
-background: var(--pressed-state);
+.current:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -28px;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--pressed-state);
 }
 
 /* ================================Hero============================ */
@@ -387,8 +387,8 @@ background: var(--pressed-state);
   width: 168px;
   height: 88px;
   fill: var(--subtle-text);
-  transition: background-color fill 250ms
-    cubic-bezier(0.4, 0, 0.2, 1);
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .company-list-link:hover,
@@ -460,11 +460,11 @@ background: var(--pressed-state);
   flex-wrap: wrap;
   gap: 48px 24px;
 }
-.menu-link-port{
+.menu-link-port {
   display: block;
 }
 
-.cover-text{
+.cover-text {
   position: relative;
   overflow: hidden;
 }
@@ -477,7 +477,7 @@ padding: 40px;
 height: 100%; */
 /* } */
 
-.overlay{
+.overlay {
   position: absolute;
   left: 0;
   top: 0;
@@ -491,8 +491,8 @@ height: 100%; */
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .card-port-shedow:hover .overlay,
-.card-port-shedow:focus .overlay{
-  transform: translate(0,0);
+.card-port-shedow:focus .overlay {
+  transform: translate(0, 0);
 }
 .card-port {
   padding: 32px 16px;
@@ -513,7 +513,9 @@ height: 100%; */
   cursor: pointer;
   border: 1px solid #e7e9fc;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-portfolio:hover,
@@ -547,7 +549,6 @@ height: 100%; */
 .card-port-shedow {
   display: block;
   transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  
 }
 
 .card-port-shedow:hover,
@@ -580,24 +581,31 @@ height: 100%; */
   transition: transform 350ms linear;
   padding: 32px;
 }
-.backdrop .is-hidden .modal{
+.backdrop .is-hidden .modal {
   transform: translate(-50%, -50%) scaleY(0) rotate(-75deg);
 }
 
-.modal-close-btn{
-width: 24px;
-height: 24px;
-border: 1px solid rgba(0, 0, 0, 0.1);
-background-color: var(--text-footer);
-border-radius: 50%;
-display: flex;
-align-items: center;
-justify-content: center;
-display: block;
-margin-left: auto;
+.modal-close-btn {
+  width: 24px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--text-footer);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.is-hidden{
+.modal-close-btn:hover,
+.modal-close-btn :focus {
+  background-color: var(--pressed-state);
+  fill: var(--white-background);
+}
+
+.is-hidden {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
