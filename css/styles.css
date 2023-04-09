@@ -70,6 +70,10 @@ button {
   padding-bottom: 120px;
 }
 
+.section-p {
+  padding-top: 0px;
+}
+
 /* =====================================Header==================================== */
 .pg-header {
   padding-top: 24px;
